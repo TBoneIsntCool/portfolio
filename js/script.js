@@ -176,6 +176,39 @@ function initCopyButtons() {
   });
 }
 
+// ---------- Video blocks (play/pause toggle + missing-file fallback) ----------
+function initVideoBlocks() {
+  document.querySelectorAll('[data-video]').forEach((video) => {
+    const btn = video.nextElementSibling;
+    const hasToggle = btn && btn.matches('[data-video-toggle]');
+
+    const sync = () => {
+      if (hasToggle) btn.textContent = video.paused ? 'Play' : 'Pause';
+    };
+
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    video.addEventListener('error', () => {
+      video.replaceWith(
+        Object.assign(document.createElement('div'), {
+          className: 'placeholder-img',
+          textContent: `Add video: ${video.getAttribute('src')}`,
+        })
+      );
+      if (hasToggle) btn.remove();
+    });
+
+    if (hasToggle) {
+      btn.addEventListener('click', () => {
+        if (video.paused) video.play();
+        else video.pause();
+      });
+    }
+
+    sync();
+  });
+}
+
 // ---------- Contact form ----------
 function initContactForm() {
   const form = document.querySelector('[data-contact-form]');
@@ -223,5 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   initReveal();
   initCopyButtons();
+  initVideoBlocks();
   initContactForm();
 });

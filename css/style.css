@@ -508,6 +508,7 @@ section {
    straight into a scrapbook rather than framed. */
 .tape-photo { position: relative; width: 100%; margin-top: 16px; }
 .tape-photo img,
+.tape-photo video,
 .tape-photo .placeholder-img {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -518,6 +519,23 @@ section {
   transform: rotate(-1.5deg);
   box-shadow: 0 20px 30px -16px rgba(0, 0, 0, 0.6);
 }
+.tape-photo video { background: var(--bg-raised); }
+
+.video-toggle {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(12, 11, 10, 0.7);
+  border: 1px solid rgba(243, 241, 236, 0.4);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.video-toggle:hover { border-color: var(--ink); background: rgba(12, 11, 10, 0.85); }
 .tape-photo .placeholder-img {
   background: var(--bg-raised);
   font-family: var(--body);
