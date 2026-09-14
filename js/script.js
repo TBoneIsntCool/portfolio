@@ -176,14 +176,15 @@ function initCopyButtons() {
   });
 }
 
-// ---------- Video blocks (play/pause toggle + missing-file fallback) ----------
+// ---------- Video blocks (play/pause, volume, missing-file fallback) ----------
 function initVideoBlocks() {
   document.querySelectorAll('[data-video]').forEach((video) => {
-    const btn = video.nextElementSibling;
-    const hasToggle = btn && btn.matches('[data-video-toggle]');
+    const container = video.parentElement;
+    const btn = container.querySelector('[data-video-toggle]');
+    const volume = container.querySelector('[data-video-volume]');
 
     const sync = () => {
-      if (hasToggle) btn.textContent = video.paused ? 'Play' : 'Pause';
+      if (btn) btn.textContent = video.paused ? 'Play' : 'Pause';
     };
 
     video.addEventListener('play', sync);
@@ -195,13 +196,23 @@ function initVideoBlocks() {
           textContent: `Add video: ${video.getAttribute('src')}`,
         })
       );
-      if (hasToggle) btn.remove();
+      if (btn) btn.remove();
+      if (volume) volume.remove();
     });
 
-    if (hasToggle) {
+    if (btn) {
       btn.addEventListener('click', () => {
         if (video.paused) video.play();
         else video.pause();
+      });
+    }
+
+    if (volume) {
+      video.volume = Number(volume.value) || 0;
+      volume.addEventListener('input', () => {
+        const level = Number(volume.value);
+        video.volume = level;
+        video.muted = level === 0;
       });
     }
 

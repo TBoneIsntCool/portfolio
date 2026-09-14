@@ -401,6 +401,13 @@ section {
 }
 .project-board > *:not(.haze) { position: relative; z-index: 1; }
 
+.more-soon {
+  font-family: var(--body);
+  color: var(--ink-dim);
+  font-size: 14px;
+  margin: 40px 0 0;
+}
+
 .project-card { width: 260px; }
 
 .project-card .polaroid {
@@ -536,6 +543,16 @@ section {
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 .video-toggle:hover { border-color: var(--ink); background: rgba(12, 11, 10, 0.85); }
+
+.video-volume {
+  position: absolute;
+  bottom: 20px;
+  left: 14px;
+  width: 64px;
+  height: 14px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
 .tape-photo .placeholder-img {
   background: var(--bg-raised);
   font-family: var(--body);

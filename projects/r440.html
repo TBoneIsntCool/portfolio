@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Josefin+Sans:wght@300;400;600&family=Atkinson+Hyperlegible:wght@400;700&display=optional">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Josefin+Sans:wght@300;400;600&family=Atkinson+Hyperlegible:wght@400;700&display=optional" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=9">
+<link rel="stylesheet" href="../css/style.css?v=10">
 </head>
 <body>
 
@@ -47,14 +47,16 @@
         <div class="tape-photo">
           <span class="tape"></span>
           <video src="../media/projects/r440/vid.mov" muted loop playsinline autoplay data-video></video>
+          <input type="range" class="video-volume" min="0" max="1" step="0.05" value="0" data-video-volume aria-label="Volume">
           <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause</button>
         </div>
       </div>
       <div class="press-text">
         <p>
-          This is my Dell R440, a rack server that lives under my bed and
-          quietly powers basically everything I do, including this website. My
-          parents are not thrilled about it, but it works.
+          This is my Dell R440, a really small server that should be on a
+          rack, but its under my bed. It (quietly) powers basically
+          everything I do, including this website. My parents aren't too
+          happy about the power draw but I don't pay it so oh well.
         </p>
       </div>
     </div>
@@ -72,8 +74,8 @@
       </div>
       <div class="press-text">
         <p>
-          It's not fancy. It just needs to stay on, stay quiet enough that
-          nobody notices it, and not become a fire hazard under there.
+          It's not the best setup, thats for sure, but it beats a VPS. Plus,
+          it doubles as a space heater.
         </p>
       </div>
     </div>
@@ -99,6 +101,6 @@
   </div>
 </footer>
 
-<script src="../js/script.js?v=9"></script>
+<script src="../js/script.js?v=10"></script>
 </body>
 </html>
