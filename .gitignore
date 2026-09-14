@@ -1,0 +1,9 @@
+# Local Claude Code dev config, not part of the site
+.claude/
+
+# Stale duplicate copy left over from early development, not the live site
+tbone-portfolio/
+
+# OS junk
+Thumbs.db
+.DS_Store

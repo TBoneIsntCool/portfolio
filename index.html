@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TBone</title>
+<meta name="description" content="TBone, owner of Vortex Studios and Roblox concert developer.">
+<link rel="icon" type="image/svg+xml" href="media/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Josefin+Sans:wght@300;400;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="tb">TB</span>one</a>
+    <nav>
+      <ul class="nav-links" data-nav-links>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="haze" style="top:-60px; right:8%; width:440px; height:440px; background:var(--amber); opacity:.09;" aria-hidden="true"></div>
+  <div class="hero-main">
+    <div class="wrap">
+      <h1 class="hero-title">
+        <span class="im">I'm</span>
+        <span class="name">TBone</span>
+      </h1>
+      <p class="type-line"><span data-typing></span></p>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#home-about">
+    <div class="wrap" style="display:flex;align-items:center;gap:10px;padding:0;">
+      Scroll
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+</section>
+
+<section class="reveal" id="home-about">
+  <div class="wrap">
+    <div class="haze" style="top:-30px; left:-40px; width:320px; height:320px; background:var(--green); opacity:.10;" aria-hidden="true"></div>
+    <p class="home-eyebrow">About</p>
+    <div class="about-layout">
+      <div class="polaroid">
+        <div class="shot">
+          <img src="media/profile.jpg" alt="TBone"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'placeholder',textContent:'Add image: media/profile.jpg'}))">
+        </div>
+      </div>
+      <div class="about-body">
+        <p>
+          Heyo. I'm VERY privacy oriented, mostly known for developing Roblox
+          games under <span class="hl-blue">Vortex Studios</span>. Outside of
+          that: dance, theatre, and a
+          <span class="hl-green">Dell R440</span> living under my bed.
+        </p>
+        <a class="see-more" href="about-me.html">Full page &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" id="home-projects">
+  <div class="wrap">
+    <div class="page-head">
+      <h2>Past work</h2>
+      <span class="wave-mark"></span>
+    </div>
+    <div class="project-board" data-projects data-limit="3"></div>
+    <a class="see-more" href="projects.html">All projects &rarr;</a>
+  </div>
+</section>
+
+<div class="home-footer">
+  <div class="wrap">
+    <span>TBone</span>
+    <span class="footer-links">
+      <a href="index.html">tboner.cc</a>
+      <a href="journal.html" class="footer-secret">journal</a>
+    </span>
+  </div>
+</div>
+
+<script src="js/script.js?v=6"></script>
+</body>
+</html>

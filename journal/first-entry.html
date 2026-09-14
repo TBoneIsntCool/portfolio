@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TBone</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="../media/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Josefin+Sans:wght@300;400;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="tb">TB</span>one</a>
+    <nav>
+      <ul class="nav-links" data-nav-links>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about-me.html">About Me</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="haze" style="top:0; left:-60px; width:340px; height:340px; background:var(--green); opacity:.08;" aria-hidden="true"></div>
+  <div class="wrap">
+    <a class="back-link" href="../journal.html">&larr; Back to journal</a>
+
+    <!--
+      This is the same header + block system the project pages use (see
+      README). Rename this file, update the title/meta/text below, and add
+      an entry to journal.json pointing at the new filename. Duplicate this
+      file again for the next entry.
+    -->
+    <header class="press-head">
+      <h1>First entry</h1>
+      <p class="press-meta">Whenever you're reading this</p>
+    </header>
+
+    <span class="wave-mark"></span>
+
+    <div class="press-block no-media">
+      <div class="press-text">
+        <p>
+          This is a template entry, not a real one. Delete this text and write
+          whatever you want here instead. Add a photo, a video, or nothing at
+          all, same as the project pages.
+        </p>
+      </div>
+    </div>
+
+    <!--
+      Need a photo or video block? Copy from any file in projects/, e.g.:
+
+      <span class="wave-mark small"></span>
+      <div class="press-block media-right">
+        <div class="press-media">
+          <div class="polaroid">
+            <div class="shot"><img src="../media/journal/first-entry/whatever.jpg" alt="..."></div>
+          </div>
+        </div>
+        <div class="press-text">
+          <p>Whatever you want to say here.</p>
+        </div>
+      </div>
+    -->
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TBone</span>
+    <span class="footer-links">
+      <a href="../index.html">tboner.cc</a>
+      <a href="../journal.html" class="footer-secret">journal</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/script.js?v=6"></script>
+</body>
+</html>
