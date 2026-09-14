@@ -632,6 +632,26 @@ form.contact-form { display: grid; gap: 26px; }
   width: fit-content;
 }
 .btn:hover { border-color: var(--blue); color: var(--blue); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn:disabled:hover { border-color: var(--line); color: var(--ink); }
+
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.form-status {
+  font-family: var(--display);
+  font-size: 14px;
+  margin: 0;
+  min-height: 1.4em;
+}
+.form-status.success { color: var(--green); }
+.form-status.error { color: var(--amber); }
 
 /* -------------------- inner-page footer -------------------- */
 

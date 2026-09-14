@@ -176,6 +176,46 @@ function initCopyButtons() {
   });
 }
 
+// ---------- Contact form ----------
+function initContactForm() {
+  const form = document.querySelector('[data-contact-form]');
+  if (!form) return;
+  const status = form.querySelector('[data-form-status]');
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    button.disabled = true;
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      if (res.ok) {
+        status.textContent = 'Sent. Thanks, I\'ll get back to you.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        status.textContent = result.error || 'Something went wrong.';
+        status.className = 'form-status error';
+      }
+    } catch (err) {
+      status.textContent = 'Could not reach the server. Try again in a bit.';
+      status.className = 'form-status error';
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTyping();
   initNavToggle();
@@ -183,4 +223,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   initReveal();
   initCopyButtons();
+  initContactForm();
 });

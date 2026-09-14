@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Josefin+Sans:wght@300;400;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -58,7 +58,7 @@
           </li>
         </ul>
       </div>
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" data-contact-form>
         <div>
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required>
@@ -71,7 +71,13 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" required></textarea>
         </div>
+        <!-- Honeypot: hidden from real visitors, bots tend to fill every field. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <button class="btn" type="submit">Send message</button>
+        <p class="form-status" data-form-status role="status"></p>
       </form>
     </div>
   </div>
@@ -87,6 +93,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=6"></script>
+<script src="js/script.js?v=7"></script>
 </body>
 </html>

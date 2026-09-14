@@ -7,3 +7,7 @@ tbone-portfolio/
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Local wrangler/miniflare dev cache (created by `wrangler pages dev`)
+.wrangler/
+node_modules/

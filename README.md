@@ -59,3 +59,11 @@ python3 -m http.server 8000
 ## Deployment
 
 Hosted on Cloudflare Pages, deployed automatically on push to `main`.
+
+## Contact form
+
+`functions/api/contact.js` is a Cloudflare Pages Function that handles the
+contact form submission and sends an email via [Resend](https://resend.com).
+It reads a `RESEND_API_KEY` environment variable, set as an encrypted secret
+in the Pages project (Settings → Environment variables), not committed to
+the repo.
