@@ -59,6 +59,7 @@ body {
   font-size: 17px;
   line-height: 1.65;
   position: relative;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -161,24 +162,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-toggle {
   display: none;
   position: relative;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: 1px solid var(--line);
   cursor: pointer;
   padding: 0;
+  touch-action: manipulation;
 }
 
 .nav-toggle span {
   position: absolute;
-  left: 9px;
-  right: 9px;
+  left: 12px;
+  right: 12px;
   height: 1px;
   background: var(--ink);
 }
-.nav-toggle span:nth-child(1) { top: 13px; }
-.nav-toggle span:nth-child(2) { top: 18px; }
-.nav-toggle span:nth-child(3) { top: 23px; }
+.nav-toggle span:nth-child(1) { top: 17px; }
+.nav-toggle span:nth-child(2) { top: 22px; }
+.nav-toggle span:nth-child(3) { top: 27px; }
 
 /* -------------------- homepage hero -------------------- */
 
@@ -199,7 +201,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index: 1;
 }
 
-.hero-main .wrap { padding: 40px 40px 0; }
+.hero-main .wrap { width: 100%; padding: 40px 40px 0; }
 
 .hero-title { line-height: 1.02; }
 
@@ -447,7 +449,7 @@ section {
 
 /* -------------------- project detail page -------------------- */
 
-.project-hero { position: relative; }
+.project-hero { position: relative; overflow: hidden; }
 .project-hero > .haze { z-index: 0; }
 .project-hero .wrap > *:not(.haze) { position: relative; z-index: 1; }
 
@@ -740,4 +742,13 @@ footer.site-footer a:hover { color: var(--blue); }
   .nav-toggle { display: block; }
   .project-card { width: 100%; }
   .project-board { flex-direction: column; }
+
+  /* Decorative glow shapes use fixed pixel offsets tuned for desktop
+     margins; on narrow screens, force them inside the viewport instead
+     of letting them push the page wider. */
+  .haze {
+    left: 10% !important;
+    right: 10% !important;
+    width: auto !important;
+  }
 }
